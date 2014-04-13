@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9924C59118FAC7CA00CF49A3 /* MyClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9924C59018FAC7CA00CF49A3 /* MyClipView.m */; };
 		99A8D8FD18FA816500AF6363 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A8D8FC18FA816500AF6363 /* Cocoa.framework */; };
 		99A8D90718FA816500AF6363 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99A8D90518FA816500AF6363 /* InfoPlist.strings */; };
 		99A8D90918FA816500AF6363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A8D90818FA816500AF6363 /* main.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9924C58F18FAC7CA00CF49A3 /* MyClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClipView.h; sourceTree = "<group>"; };
+		9924C59018FAC7CA00CF49A3 /* MyClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClipView.m; sourceTree = "<group>"; };
 		99A8D8F918FA816500AF6363 /* ImageCenteredInScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCenteredInScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A8D8FC18FA816500AF6363 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		99A8D8FF18FA816500AF6363 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 				99A8D91118FA816500AF6363 /* MainMenu.xib */,
 				99A8D93018FA817E00AF6363 /* MyPreview.h */,
 				99A8D93118FA817E00AF6363 /* MyPreview.m */,
+				9924C58F18FAC7CA00CF49A3 /* MyClipView.h */,
+				9924C59018FAC7CA00CF49A3 /* MyClipView.m */,
 				99A8D91418FA816500AF6363 /* Images.xcassets */,
 				99A8D93318FA81FB00AF6363 /* mata-ri.png */,
 				99A8D90318FA816500AF6363 /* Supporting Files */,
@@ -261,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9924C59118FAC7CA00CF49A3 /* MyClipView.m in Sources */,
 				99A8D91018FA816500AF6363 /* AppDelegate.m in Sources */,
 				99A8D93218FA817E00AF6363 /* MyPreview.m in Sources */,
 				99A8D90918FA816500AF6363 /* main.m in Sources */,
@@ -476,6 +482,7 @@
 				99A8D92C18FA816500AF6363 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99A8D92D18FA816500AF6363 /* Build configuration list for PBXNativeTarget "ImageCenteredInScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				99A8D92F18FA816500AF6363 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

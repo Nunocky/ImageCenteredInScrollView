@@ -18,6 +18,6 @@
     NSInteger idx = [sender selectedColumn];
     CGFloat mag = (idx == 0)? -0.1 : 0.1;
     self.scrollView.magnification += mag;
-    [self.scrollView.documentView setNeedsDisplay:YES];
+//    [self.scrollView.documentView setNeedsDisplay:YES];
 }
 @end
