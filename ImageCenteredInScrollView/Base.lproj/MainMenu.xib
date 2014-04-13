@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -13,7 +13,9 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="preview" destination="yxa-IZ-k8I" id="e2o-kq-suM"/>
+                <outlet property="scrollView" destination="fej-OE-OyP" id="sK8-6R-c9e"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="nOC-hg-jR8"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -669,11 +671,77 @@
         <window title="ImageCenteredInScrollView" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="335" y="390" width="465" height="366"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="465" height="366"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fej-OE-OyP">
+                        <rect key="frame" x="20" y="60" width="425" height="286"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" copiesOnScroll="NO" id="6Pc-EY-5mU">
+                            <rect key="frame" x="1" y="1" width="423" height="284"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-IZ-k8I" customClass="MyPreview">
+                                    <rect key="frame" x="0.0" y="0.0" width="423" height="284"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="kXK-ob-1wO">
+                            <rect key="frame" x="1" y="269" width="423" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="76T-kb-O1K">
+                            <rect key="frame" x="409" y="1" width="15" height="284"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGs-yF-Hdi">
+                        <rect key="frame" x="151" y="20" width="164" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="164" id="049-3K-6a5"/>
+                            <constraint firstAttribute="height" constant="32" id="RIe-3a-9du"/>
+                        </constraints>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="82" height="32"/>
+                        <buttonCell key="prototype" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9P2-cz-feh">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="push" title="-" bezelStyle="rounded" alignment="center" continuous="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3a6-TD-dCp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">-</string>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="push" title="+" bezelStyle="rounded" alignment="center" continuous="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wg3-8s-Q4j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">+</string>
+                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                        <connections>
+                            <action selector="performMagnification:" target="Voe-Tx-rLC" id="bq2-wF-zh8"/>
+                        </connections>
+                    </matrix>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fej-OE-OyP" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="0hC-ai-O0y"/>
+                    <constraint firstAttribute="trailing" secondItem="fej-OE-OyP" secondAttribute="trailing" constant="20" id="1FU-QD-GCb"/>
+                    <constraint firstAttribute="bottom" secondItem="MGs-yF-Hdi" secondAttribute="bottom" constant="20" id="Oqs-bf-Esy"/>
+                    <constraint firstItem="fej-OE-OyP" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="Xjg-rE-Bmf"/>
+                    <constraint firstItem="MGs-yF-Hdi" firstAttribute="top" secondItem="fej-OE-OyP" secondAttribute="bottom" constant="8" id="p59-pZ-qdT"/>
+                    <constraint firstAttribute="centerX" secondItem="MGs-yF-Hdi" secondAttribute="centerX" id="tVv-Jc-jei"/>
+                </constraints>
             </view>
         </window>
     </objects>
