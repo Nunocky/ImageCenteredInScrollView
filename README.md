@@ -1,6 +1,9 @@
 ImageCenteredInScrollView
 =========================
 
-NSScrollViewの中に NSImageを中央に来るように表示したい
+Sample implementation of showing NSImage centered into NSView.
 
-配置も表示もできているのだけど、magnificationを増やす方に操作すると再描画されない領域がある。スクロールするとその部分も表示されるので描画のロジックには間違いは無いと思うのだが
+refs: 
+http://qiita.com/1024jp/items/f3cd7bc7765cf090fa31
+
+http://qiita.com/Nunocky/items/3203a634e896ce0bb244
