@@ -40,13 +40,13 @@
     }
 }
 
--(void)magnifyWithEvent:(NSEvent *)event
+-(void)magnifyWithEvent:(NSEvent *)theEvent
 {
     if ([[self superview] superview]) {
         id ssv = [[self superview] superview];
         if ([ssv isKindOfClass:[NSScrollView class]]) {
             NSScrollView *scrollView = (NSScrollView*)ssv;
-            scrollView.magnification += event.magnification;
+            scrollView.magnification += theEvent.magnification;
         }
     }
 }
@@ -57,7 +57,9 @@
         return;
     
     _image = image;
-    
-    [self setFrameSize:_image.size]; // TODO :
+
+    if (_image) {
+        [self setFrameSize:_image.size];
+    }
 }
 @end
